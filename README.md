@@ -5,7 +5,7 @@
 # В animateText.js
 var animateDuration = 1000; // задержка между обзацами <br>
 var animateDurationText = 1000; // время анимации текста
-<pre>
+<code>
 <div id="animateText1" class="animateText1">
     <p>11Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aspernatur expedita impedit itaque odio quam qui.
         Adipisci deleniti dolore doloribus ducimus iure nam, nostrum possimus velit. Distinctio magnam numquam
@@ -35,4 +35,4 @@ var animateDurationText = 1000; // время анимации текста
 </div>
 
 <script src="animateText.js"></script>
-</pre>
+</code>
