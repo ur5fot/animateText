@@ -1,9 +1,9 @@
 /**
  * Created by ur5fot on 04.11.15.
  */
-
-var animateDuration = 1000;
-var animateDurationText = 1000;
+// у блоков id animateText1 и animateText2
+var animateDuration = 1000; // задержка между обзацами
+var animateDurationText = 1000; // время анимации текста
 
 var animateText1 = document.getElementById('animateText1');
 var animateText2 = document.getElementById('animateText2');
@@ -12,15 +12,14 @@ var animateText1Child = animateText1.querySelectorAll('p');
 animateText1.innerHTML = " ";
 var animateText2Child = animateText2.querySelectorAll('p');
 animateText2.innerHTML = " ";
-//console.log(animateText2Child);
 document.addEventListener("DOMContentLoaded", animateText);
 
 
 function animateText() {
     var i = 0;
-    var text1 = animateText1Child[0].textContent;
+    var text1 = animateText1Child[0].innerHTML;
     var to = text1.length;
-    var text2 = animateText2Child[0].textContent;
+    var text2 = animateText2Child[0].innerHTML;
     var to2 = text2.length;
     animate({
         duration: animateDurationText,
@@ -34,9 +33,9 @@ function animateText() {
     });
     setTimeout(function inter() {
         if (i < animateText1Child.length) {
-            var text1 = animateText1Child[i].textContent;
+            var text1 = animateText1Child[i].innerHTML;
             var to = text1.length;
-            var text2 = animateText2Child[i].textContent;
+            var text2 = animateText2Child[i].innerHTML;
             var to2 = text2.length;
             animate({
                 duration: animateDurationText,
