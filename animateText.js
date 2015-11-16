@@ -17,9 +17,9 @@ document.addEventListener("DOMContentLoaded", function () {
     animateText2.innerHTML = "";
 
     setTimeout(animateText, startDuration);
-
+    var i = 0;
     function animateText() {
-        var i = 0;
+
         if (i < animateText1Child.length) {
             var text1 = animateText1Child[i].innerHTML;
             var to = text1.length;
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
             setTimeout(animateText, animateDurationText + animateDuration);
         } else if (i >= animateText1Child.length) {
             i = 0;
-            setTimeout(animateText, animateDurationText + animateDuration);
+            setTimeout(animateText, animateDuration);
         }
     }
 
