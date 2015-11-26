@@ -8,31 +8,32 @@ document.addEventListener("DOMContentLoaded", function () {
         startDuration = 1000, // задержка перед стартом
 
         animateText1 = document.getElementById('animateText1'),
-        animateText2 = document.getElementById('animateText2'),
+        animateText2 = document.getElementById('animateText2');
 
-        animateText1Child = animateText1.querySelectorAll('p'),
-        animateText2Child = animateText2.querySelectorAll('p');
+    if (animateText1) var animateText1Child = animateText1.querySelectorAll('p');
+    if (animateText2)  var animateText2Child = animateText2.querySelectorAll('p');
 
-    animateText1.innerHTML = "";
-    animateText2.innerHTML = "";
+    if (animateText1) animateText1.innerHTML = "";
+    if (animateText2) animateText2.innerHTML = "";
 
     setTimeout(animateText, startDuration);
     var i = 0;
+
     function animateText() {
 
         if (i < animateText1Child.length) {
-            var text1 = animateText1Child[i].innerHTML;
-            var to = text1.length;
-            var text2 = animateText2Child[i].innerHTML;
-            var to2 = text2.length;
+            if (animateText1) var text1 = animateText1Child[i].innerHTML;
+            if (animateText1) var to = text1.length;
+            if (animateText2) var text2 = animateText2Child[i].innerHTML;
+            if (animateText2) var to2 = text2.length;
             animate({
                 duration: animateDurationText,
                 timing: line,
                 draw: function (progress) {
-                    var result = to * progress;
-                    animateText1.innerHTML = text1.substr(0, Math.ceil(result));
-                    var result2 = to2 * progress;
-                    animateText2.innerHTML = text2.substr(0, Math.ceil(result2))
+                    if (animateText1) var result = to * progress;
+                    if (animateText1) animateText1.innerHTML = text1.substr(0, Math.ceil(result));
+                    if (animateText2) var result2 = to2 * progress;
+                    if (animateText2) animateText2.innerHTML = text2.substr(0, Math.ceil(result2))
                 }
             });
             i++;
