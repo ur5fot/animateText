@@ -21,26 +21,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function animateText() {
 
-        if (i < animateText1Child.length) {
-            if (animateText1) var text1 = animateText1Child[i].innerHTML;
-            if (animateText1) var to = text1.length;
-            if (animateText2) var text2 = animateText2Child[i].innerHTML;
-            if (animateText2) var to2 = text2.length;
-            animate({
-                duration: animateDurationText,
-                timing: line,
-                draw: function (progress) {
-                    if (animateText1) var result = to * progress;
-                    if (animateText1) animateText1.innerHTML = text1.substr(0, Math.ceil(result));
-                    if (animateText2) var result2 = to2 * progress;
-                    if (animateText2) animateText2.innerHTML = text2.substr(0, Math.ceil(result2))
-                }
-            });
-            i++;
-            setTimeout(animateText, animateDurationText + animateDuration);
-        } else if (i >= animateText1Child.length) {
-            i = 0;
-            setTimeout(animateText, animateDuration);
+        if (animateText1) {
+            if (i < animateText1Child.length) {
+                if (animateText1) var text1 = animateText1Child[i].innerHTML;
+                if (animateText1) var to = text1.length;
+                if (animateText2) var text2 = animateText2Child[i].innerHTML;
+                if (animateText2) var to2 = text2.length;
+                animate({
+                    duration: animateDurationText,
+                    timing: line,
+                    draw: function (progress) {
+                        if (animateText1) var result = to * progress;
+                        if (animateText1) animateText1.innerHTML = text1.substr(0, Math.ceil(result));
+                        if (animateText2) var result2 = to2 * progress;
+                        if (animateText2) animateText2.innerHTML = text2.substr(0, Math.ceil(result2))
+                    }
+                });
+                i++;
+                setTimeout(animateText, animateDurationText + animateDuration);
+            } else if (i >= animateText1Child.length) {
+                i = 0;
+                setTimeout(animateText, animateDuration);
+            }
         }
     }
 
